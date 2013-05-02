@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="DOGDataClasses">
+  <DataContextMoniker Name="/DOGDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d0b86707-2f8e-4640-9481-8b7693d00e34" absoluteBounds="0.5, 0.5, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/DOGDataClassesDataContext/DealerInventoryCICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3b3ddca-ab71-4920-971f-b5cdcdb21bf9" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28f6ceea-2f75-473d-83c2-f76e6ae5700a" absoluteBounds="3.125, 1.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DOGDataClassesDataContext/DealerTagTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80439eba-200d-4f5a-80b9-5143b4a291d8" absoluteBounds="3.14, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 2.01044840494792); (2.5 : 2.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DOGDataClassesDataContext/DealerTagTable/DealerTagTable_DealerInventoryCICO" />
+      <nodes>
+        <classShapeMoniker Id="28f6ceea-2f75-473d-83c2-f76e6ae5700a" />
+        <classShapeMoniker Id="d0b86707-2f8e-4640-9481-8b7693d00e34" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0403ea1d-bbdc-4fd7-a540-d55c89f662e2" absoluteBounds="7.625, 1.25, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/DOGDataClassesDataContext/Contact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2360aab3-21e2-46b4-b4f6-12330f4e73e2" absoluteBounds="7.64, 1.71, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.625 : 5.68186686197917); (2.5 : 5.68186686197917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DOGDataClassesDataContext/Contact/Contact_DealerInventoryCICO" />
+      <nodes>
+        <classShapeMoniker Id="0403ea1d-bbdc-4fd7-a540-d55c89f662e2" />
+        <classShapeMoniker Id="d0b86707-2f8e-4640-9481-8b7693d00e34" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7d1728dd-3683-4e5d-bb64-37ea1bd03c8f" absoluteBounds="5.5, 0.75, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DOGDataClassesDataContext/Vendor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26a806f4-a3ed-4b83-9950-2d6ea70cabb7" absoluteBounds="5.515, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.41270182291667); (2.5 : 3.41270182291667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DOGDataClassesDataContext/Vendor/Vendor_DealerInventoryCICO" />
+      <nodes>
+        <classShapeMoniker Id="7d1728dd-3683-4e5d-bb64-37ea1bd03c8f" />
+        <classShapeMoniker Id="d0b86707-2f8e-4640-9481-8b7693d00e34" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
