@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db1449f357b50747b19f25a1b200c3ba4b" Class="DOGDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=1449f357-b507-47b1-9f25-a1b200c3ba4b.sqlserver.sequelizer.com;Initial Catalog=db1449f357b50747b19f25a1b200c3ba4b;User ID=dljwivgbywmgjfqp" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DeviceonguardConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DealerInventoryCICO" Member="DealerInventoryCICOs">
+    <Type Name="DealerInventoryCICO">
+      <Column Name="DealerInventoryCICOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DealerInventoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutEmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckOutKeyRFid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CheckOutKeyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckOutDealerTagRFid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CheckOutDealerTagDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckOutDealerTagID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutReason" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CheckOutContactID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutVendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutMileage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutMilesPermitted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckOutHoursPermitted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckInEmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckInDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckInKeyRFid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CheckInKeyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckInDealerTagRFid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CheckInDealerTagDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckInMileage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckInResult" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CheckInLicensePlateSold" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CheckInNotes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RowDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DealerTagTable_DealerInventoryCICO" Member="DealerTagTable" ThisKey="CheckOutDealerTagID" OtherKey="DealerTagID" Type="DealerTagTable" IsForeignKey="true" />
+      <Association Name="Contact_DealerInventoryCICO" Member="Contact" ThisKey="CheckOutContactID" OtherKey="ContactID" Type="Contact" IsForeignKey="true" />
+      <Association Name="Vendor_DealerInventoryCICO" Member="Vendor" ThisKey="CheckOutVendorID" OtherKey="VendorID" Type="Vendor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DealerTags" Member="DealerTagTables">
+    <Type Name="DealerTagTable">
+      <Column Name="DealerTagID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DealerTag" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DealerTagRFid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RemoveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RowDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DealerTagTable_DealerInventoryCICO" Member="DealerInventoryCICOs" ThisKey="DealerTagID" OtherKey="CheckOutDealerTagID" Type="DealerInventoryCICO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contacts" Member="Contacts">
+    <Type Name="Contact">
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DLNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BirthdayYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NText" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StateOrProvince" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LeadSource" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LeadOriginalDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BusinessPhone" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="FaxNumber" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="WebPage" Type="System.String" DbType="NText" CanBeNull="true" />
+      <Column Name="ContactNotes" Type="System.String" DbType="NText" CanBeNull="true" />
+      <Column Name="StockNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PreferredVehicleType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PreferredVehicleYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreferredVehicleMake" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PreferredVehicleModel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ApptSet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="upsize_ts" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="RowDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Contact_DealerInventoryCICO" Member="DealerInventoryCICOs" ThisKey="ContactID" OtherKey="CheckOutContactID" Type="DealerInventoryCICO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vendors" Member="Vendors">
+    <Type Name="Vendor">
+      <Column Name="VendorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VendorAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VendorCity" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VendorStateOrProvince" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VendorPostalCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OfficeNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CellNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VendorNotes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InactiveDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RowDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Vendor_DealerInventoryCICO" Member="DealerInventoryCICOs" ThisKey="VendorID" OtherKey="CheckOutVendorID" Type="DealerInventoryCICO" />
+    </Type>
+  </Table>
+</Database>
