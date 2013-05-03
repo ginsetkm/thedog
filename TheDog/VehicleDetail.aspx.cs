@@ -278,9 +278,9 @@ namespace TheDog
         }
         protected void DetailsViewContactSelected_ItemInserting(object sender, DetailsViewInsertEventArgs e)
         {
-            //SqlDataSource SqlDataSourceContact = (SqlDataSource)FormViewCICO.FindControl("SqlDataSourceContact");
-            //SqlDataSourceContact.InsertParameters["EmployeeID"].DefaultValue = "1";
-            //SqlDataSourceContact.InsertParameters["RowDateTime"].DefaultValue = DateTime.Now.ToString();
+            LinqDataSource LinqDataSourceContacts = (LinqDataSource)FormViewCICO.FindControl("LinqDataSourceContacts");
+            LinqDataSourceContacts.UpdateParameters["EmployeeID"].DefaultValue = "1";
+            LinqDataSourceContacts.InsertParameters["RowDateTime"].DefaultValue = DateTime.Now.ToString();
         }
 
         protected void DetailsViewContactSelected_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
