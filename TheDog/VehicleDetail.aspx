@@ -5,11 +5,11 @@
         <Triggers>
         </Triggers>
         <ContentTemplate>
-             <asp:SqlDataSource ID="SqlDataSourceVehicleDetailInfo" runat="server" ConnectionString="<%$ ConnectionStrings:DeviceonguardConnectionString %>" 
-                SelectCommand="SELECT * FROM [DealerInventory] WHERE ([DealerInventoryID] = @DealerInventoryID)">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="DealerInventoryID" QueryStringField="InventoryID" Type="Int32" />
-                </SelectParameters>
+            <asp:SqlDataSource ID="SqlDataSourceVehicleDetailInfo" runat="server" ConnectionString="<%$ ConnectionStrings:DeviceonguardConnectionString %>" 
+            SelectCommand="SELECT * FROM [DealerInventory] WHERE ([DealerInventoryID] = @DealerInventoryID)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="DealerInventoryID" QueryStringField="InventoryID" Type="Int32" />
+            </SelectParameters>
             </asp:SqlDataSource>
             <asp:DetailsView ID="DetailsViewVehicle" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="DealerInventoryID" DataSourceID="SqlDataSourceVehicleDetailInfo" ForeColor="#333333" GridLines="None" Height="50px" Width="100%">
                 <FieldHeaderStyle BackColor="#ccc" Font-Bold="True"  />
@@ -142,7 +142,7 @@
                     <asp:TextBox ID="VendorIDTextBox" runat="server" Text='<%# Bind("VendorID") %>' Visible="false" />
                     <div class="cicoleft">
                         <asp:Table ID="ContactTable" runat="server" CssClass="datatable" Visible="true">
-                            <asp:TableRow><asp:TableCell ColumnSpan="2" CssClass="headertable"><h2>Driver Information</h2></asp:TableCell></asp:TableRow><asp:TableRow><asp:TableHeaderCell>Phone/DL</asp:TableHeaderCell><asp:TableCell>
+                            <asp:TableRow><asp:TableCell ColumnSpan="2" CssClass="headertable"><h2>Contact Information</h2></asp:TableCell></asp:TableRow><asp:TableRow><asp:TableHeaderCell>Phone/DL</asp:TableHeaderCell><asp:TableCell>
                                     <asp:TextBox ID="FindTextBox" runat="server" Text="" />&nbsp;
                                     <asp:Button ID="ButtonSearchContact" runat="server" Text="F" Width="20px" Height="20px" OnClick="ButtonSearchContact_Click"/>&nbsp;
                                     <asp:Button ID="ButtonNewContact" runat="server" Text="Add New" CssClass="mainbutton" OnClick="ButtonNewContact_Click"/>

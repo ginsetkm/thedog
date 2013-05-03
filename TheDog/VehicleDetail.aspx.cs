@@ -154,6 +154,7 @@ namespace TheDog
         }
         protected void ButtonNewContact_Click(object sender, EventArgs e)
         {
+            TextBox FindTextBox = (TextBox)FormViewCICO.FindControl("FindTextBox");
             DetailsView DetailsViewContactSelected = (DetailsView)FormViewCICO.FindControl("DetailsViewContactSelected");
             if (DetailsViewContactSelected.CurrentMode == DetailsViewMode.ReadOnly)
                 DetailsViewContactSelected.ChangeMode(DetailsViewMode.Insert);
