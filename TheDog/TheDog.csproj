@@ -218,6 +218,7 @@
     <None Include="DOGDataClasses.dbml.layout">
       <DependentUpon>DOGDataClasses.dbml</DependentUpon>
     </None>
+    <None Include="Properties\PublishProfiles\TheDog.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

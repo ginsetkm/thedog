@@ -154,7 +154,14 @@ namespace TheDog
         }
         protected void ButtonNewContact_Click(object sender, EventArgs e)
         {
+            Label PhoneDLLabel = (Label)FormViewCICO.FindControl("PhoneDLLabel");
             TextBox FindTextBox = (TextBox)FormViewCICO.FindControl("FindTextBox");
+            Button ButtonNewContact = (Button)FormViewCICO.FindControl("ButtonNewContact");
+            Button ButtonSearchContact = (Button)FormViewCICO.FindControl("ButtonSearchContact");
+            PhoneDLLabel.Visible = false;
+            FindTextBox.Visible = false;
+            ButtonSearchContact.Visible = false;
+            ButtonNewContact.Visible = false;
             DetailsView DetailsViewContactSelected = (DetailsView)FormViewCICO.FindControl("DetailsViewContactSelected");
             if (DetailsViewContactSelected.CurrentMode == DetailsViewMode.ReadOnly)
                 DetailsViewContactSelected.ChangeMode(DetailsViewMode.Insert);
@@ -253,6 +260,22 @@ namespace TheDog
                 }
             }
         }
+        protected void DetailsViewContactSelected_ItemCommand(object sender, DetailsViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Cancel")
+            {
+                Label PhoneDLLabel = (Label)FormViewCICO.FindControl("PhoneDLLabel");
+                TextBox FindTextBox = (TextBox)FormViewCICO.FindControl("FindTextBox");
+                Button ButtonNewContact = (Button)FormViewCICO.FindControl("ButtonNewContact");
+                Button ButtonSearchContact = (Button)FormViewCICO.FindControl("ButtonSearchContact");
+                PhoneDLLabel.Visible = true;
+                FindTextBox.Visible = true;
+                ButtonSearchContact.Visible = true;
+                ButtonNewContact.Visible = true;
+                DetailsView DetailsViewContactSelected = (DetailsView)FormViewCICO.FindControl("DetailsViewContactSelected");
+                DetailsViewContactSelected.ChangeMode(DetailsViewMode.ReadOnly);
+            }
+        }
         protected void DetailsViewContactSelected_ItemInserting(object sender, DetailsViewInsertEventArgs e)
         {
             //SqlDataSource SqlDataSourceContact = (SqlDataSource)FormViewCICO.FindControl("SqlDataSourceContact");
@@ -262,6 +285,14 @@ namespace TheDog
 
         protected void DetailsViewContactSelected_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
         {
+            Label PhoneDLLabel = (Label)FormViewCICO.FindControl("PhoneDLLabel");
+            TextBox FindTextBox = (TextBox)FormViewCICO.FindControl("FindTextBox");
+            Button ButtonNewContact = (Button)FormViewCICO.FindControl("ButtonNewContact");
+            Button ButtonSearchContact = (Button)FormViewCICO.FindControl("ButtonSearchContact");
+            PhoneDLLabel.Visible = true;
+            FindTextBox.Visible = true;
+            ButtonSearchContact.Visible = true;
+            ButtonNewContact.Visible = true;
         }
         protected void LinqDataSourceContacts_Inserted(object sender, LinqDataSourceStatusEventArgs e)
         {

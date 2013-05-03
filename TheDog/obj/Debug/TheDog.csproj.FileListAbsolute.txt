@@ -63,6 +63,5 @@ C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\bin\DotNetOp
 C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\bin\DotNetOpenAuth.AspNet.xml
 C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\bin\Microsoft.AspNet.Membership.OpenAuth.xml
 C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\obj\Debug\TheDog.csprojResolveAssemblyReference.cache
 C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\obj\Debug\TheDog.dll
 C:\Users\Ginset\Documents\Visual Studio 2012\Projects\TheDog\TheDog\obj\Debug\TheDog.pdb

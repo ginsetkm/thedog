@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="thedog" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Ginset\\Documents\\Visual\ Studio\ 2012\\Projects\\TheDog\\TheDog\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Ginset\\Documents\\Visual\ Studio\ 2012\\Projects\\TheDog\\TheDog\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="thedog/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Ginset\\Documents\\Visual\ Studio\ 2012\\Projects\\TheDog\\TheDog\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-TheDog-20130423131523;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-TheDog-20130423131523.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ginset\\Documents\\Visual\ Studio\ 2012\\Projects\\TheDog\\TheDog\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DeviceonguardConnectionString-Web.config Connection String" description="" value="Server=1449f357-b507-47b1-9f25-a1b200c3ba4b.sqlserver.sequelizer.com;Database=db1449f357b50747b19f25a1b200c3ba4b;User ID=dljwivgbywmgjfqp;Password=nLRnNbdUCSBNTLewAgcVzyTggGv2QhVGuf7v7cxfxKzJxJruXgVqk2jV2KgfMkeu;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ginset\\Documents\\Visual\ Studio\ 2012\\Projects\\TheDog\\TheDog\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DeviceonguardConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
