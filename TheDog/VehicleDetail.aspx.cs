@@ -161,15 +161,14 @@ namespace TheDog
         protected void ButtonSearchContact_Click(object sender, EventArgs e)
         {
             TextBox FindTextBox = (TextBox)FormViewCICO.FindControl("FindTextBox");
-            TextBox ContactIDTextBox = (TextBox)FormViewCICO.FindControl("ContactIDTextBox");
             DetailsView DetailsViewContactSelected = (DetailsView)FormViewCICO.FindControl("DetailsViewContactSelected");
-            SqlDataSource SqlDataSourceContact = (SqlDataSource)FormViewCICO.FindControl("SqlDataSourceContact");
-            
-            //Search on Table by Phone or DL
-            SqlDataSourceContact.SelectCommand = "SELECT * FROM CONTACTS WHERE [HomePhone] = " + FindTextBox.Text;
 
-            DetailsViewContactSelected.DataBind();
-            DetailsViewContactSelected.ChangeMode(DetailsViewMode.ReadOnly);
+            if ((from a in dc.Contacts where a.HomePhone == FindTextBox.Text.Trim() select a).Any())
+            {
+                Session["ContactID"] = (from a in dc.Contacts where a.HomePhone == FindTextBox.Text.Trim() select a).FirstOrDefault().ContactID;
+                DetailsViewContactSelected.DataBind();
+                DetailsViewContactSelected.ChangeMode(DetailsViewMode.ReadOnly);
+            }
         }
         protected void ButtonNewVendor_Click(object sender, EventArgs e)
         {
@@ -255,9 +254,9 @@ namespace TheDog
         }
         protected void DetailsViewContactSelected_ItemInserting(object sender, DetailsViewInsertEventArgs e)
         {
-            SqlDataSource SqlDataSourceContact = (SqlDataSource)FormViewCICO.FindControl("SqlDataSourceContact");
-            SqlDataSourceContact.InsertParameters["EmployeeID"].DefaultValue = "1";
-            SqlDataSourceContact.InsertParameters["RowDateTime"].DefaultValue = DateTime.Now.ToString();
+            //SqlDataSource SqlDataSourceContact = (SqlDataSource)FormViewCICO.FindControl("SqlDataSourceContact");
+            //SqlDataSourceContact.InsertParameters["EmployeeID"].DefaultValue = "1";
+            //SqlDataSourceContact.InsertParameters["RowDateTime"].DefaultValue = DateTime.Now.ToString();
         }
 
         protected void DetailsViewContactSelected_ItemInserted(object sender, DetailsViewInsertedEventArgs e)

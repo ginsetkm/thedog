@@ -5,12 +5,6 @@
         <Triggers>
         </Triggers>
         <ContentTemplate>
-                                    <asp:LinqDataSource ID="LinqDataSourceContacts" runat="server" ContextTypeName="TheDog.DOGDataClassesDataContext" EnableInsert="True" EntityTypeName="" TableName="Contacts"
-                                         OnInserted="LinqDataSourceContacts_Inserted" Where="ContactID == @ContactID" >
-                                        <WhereParameters>
-                                            <asp:SessionParameter DefaultValue="0" Name="ContactID" SessionField="ContactID" Type="Int32" />
-                                        </WhereParameters>
-                                    </asp:LinqDataSource>
              <asp:SqlDataSource ID="SqlDataSourceVehicleDetailInfo" runat="server" ConnectionString="<%$ ConnectionStrings:DeviceonguardConnectionString %>" 
                 SelectCommand="SELECT * FROM [DealerInventory] WHERE ([DealerInventoryID] = @DealerInventoryID)">
                 <SelectParameters>
@@ -150,35 +144,19 @@
                         <asp:Table ID="ContactTable" runat="server" CssClass="datatable" Visible="true">
                             <asp:TableRow><asp:TableCell ColumnSpan="2" CssClass="headertable"><h2>Driver Information</h2></asp:TableCell></asp:TableRow><asp:TableRow><asp:TableHeaderCell>Phone/DL</asp:TableHeaderCell><asp:TableCell>
                                     <asp:TextBox ID="FindTextBox" runat="server" Text="" />&nbsp;
-                                    <asp:ImageButton ID="ButtonSearchContact" runat="server" ImageUrl="~/Images/search.png" Width="40px" Height="40px" ImageAlign="Middle" OnClick="ButtonSearchContact_Click"/>&nbsp;
+                                    <asp:Button ID="ButtonSearchContact" runat="server" Text="F" Width="20px" Height="20px" OnClick="ButtonSearchContact_Click"/>&nbsp;
                                     <asp:Button ID="ButtonNewContact" runat="server" Text="Add New" CssClass="mainbutton" OnClick="ButtonNewContact_Click"/>
                                 </asp:TableCell></asp:TableRow><asp:TableRow>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="2" Width="100%">
-                                    <asp:SqlDataSource ID="SqlDataSourceContact" runat="server" ConnectionString="<%$ ConnectionStrings:DeviceonguardConnectionString %>" 
-                                        InsertCommand="INSERT INTO [Contacts] ([DLNumber], [FirstName], [MiddleName], [LastName], [BirthdayYear], [Sex], [Height], [Address], [City], [StateOrProvince], [PostalCode], [Country], [HomePhone], [EmailAddress], [EmployeeID], [RowDateTime]) VALUES (@DLNumber, @FirstName, @MiddleName, @LastName, @BirthdayYear, @Sex, @Height, @Address, @City, @StateOrProvince, @PostalCode, @Country, @HomePhone, @EmailAddress, @EmployeeID, @RowDateTime)" 
-                                        SelectCommand="" >
-                                        <InsertParameters>
-                                            <asp:Parameter Name="DLNumber" Type="String" />
-                                            <asp:Parameter Name="FirstName" Type="String" />
-                                            <asp:Parameter Name="MiddleName" Type="String" />
-                                            <asp:Parameter Name="LastName" Type="String" />
-                                            <asp:Parameter Name="BirthdayYear" Type="Int16" />
-                                            <asp:Parameter Name="Sex" Type="String" />
-                                            <asp:Parameter Name="Height" Type="String" />
-                                            <asp:Parameter Name="Address" Type="String" />
-                                            <asp:Parameter Name="City" Type="String" />
-                                            <asp:Parameter Name="StateOrProvince" Type="String" />
-                                            <asp:Parameter Name="PostalCode" Type="String" />
-                                            <asp:Parameter Name="Country" Type="String" />
-                                            <asp:Parameter Name="HomePhone" Type="String" />
-                                            <asp:Parameter Name="EmailAddress" Type="String" />
-                                            <asp:Parameter Name="EmployeeID" Type="Int32" />
-                                            <asp:Parameter Name="RowDateTime" Type="DateTime" />
-                                            <asp:Parameter Direction="ReturnValue" Name="ContactID" Type="Int64" />
-                                        </InsertParameters>
-                                    </asp:SqlDataSource>
+                                    <asp:LinqDataSource ID="LinqDataSourceContacts" runat="server" ContextTypeName="TheDog.DOGDataClassesDataContext" 
+                                        EnableInsert="True" EntityTypeName="" TableName="Contacts"
+                                        OnInserted="LinqDataSourceContacts_Inserted" Where="ContactID == @ContactID" >
+                                        <WhereParameters>
+                                            <asp:SessionParameter DefaultValue="0" Name="ContactID" SessionField="ContactID" Type="Int32" />
+                                        </WhereParameters>
+                                    </asp:LinqDataSource>
                                     <asp:DetailsView ID="DetailsViewContactSelected" runat="server" 
                                         Width="100%" AutoGenerateRows="False" DefaultMode="ReadOnly" 
                                         EmptyDataText="" GridLines="None" 
@@ -204,7 +182,6 @@
                                                     <asp:TextBox ID="CityTextBox" runat="server" Text='<%# Bind("City") %>' Width="110px"></asp:TextBox>&nbsp;
                                                     <asp:TextBox ID="StateOrProvinceTextBox" runat="server" Text='<%# Bind("StateOrProvince") %>' Width="40px"></asp:TextBox>&nbsp;
                                                     <asp:TextBox ID="PostalCodeTextBox" runat="server" Text='<%# Bind("PostalCode") %>' Width="80px"></asp:TextBox>&nbsp;
-                                                    <asp:TextBox ID="CountryTextBox" runat="server" Text='<%# Bind("Country") %>' Width="40px"></asp:TextBox>
                                                 </InsertItemTemplate>
                                                 <ItemTemplate>
                                                     <asp:Label ID="AddressLabel" runat="server" Text='<%# String.Format("{0}. {1}, {2}, {3}",Eval("Address"), Eval("City"), Eval("StateOrProvince"), Eval("PostalCode"))%>'></asp:Label>
